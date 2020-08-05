@@ -62,7 +62,7 @@ int add(int x, int y){
 }
 fun();
 ```
-## 10.流程图
+## 10.流程图（github不支持）
 ```flow
 st=>start: 开始
 op=>operation: My Operation
@@ -71,4 +71,4 @@ e=>end
 st->op->cond
 cond(yes)->e
 cond(no)->op
-&```
+```
