@@ -1,3 +1,4 @@
+[跳转到文章尾](#end)
 <span id="home"><span/>
 1.  JavaScript 程序的执行单位为行（line），也就是一行一行地执行。
 2.	var用来声明变量（可不写但不提倡），如果只是声明变量而没有赋值，则该变量的值是undefined。undefined是一个特殊的值，表示“无定义”。
@@ -38,3 +39,4 @@
 29.	有时需要冻结对象的读写状态，防止对象被改变。JavaScript 提供了三种冻结方法，最弱的一种是Object.preventExtensions，其次是Object.seal，最强的是Object.freeze。
 
 [跳转到文章开头](#home)
+<span id="end"></span>
