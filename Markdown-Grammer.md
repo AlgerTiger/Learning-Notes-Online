@@ -90,15 +90,13 @@ fun();
 * [x] 看书
 ## 12.一些github不支持的markdown用法
 * 脚注
-* 流程图
+* FlowChart流程图
 * LaTex公式（可以使用折中方案codecogs）  
 ![](https://latex.codecogs.com/gif.latex?sum_{i=1}^n%20a_i=0)  
 ![](https://latex.codecogs.com/gif.latex?f\(x_1,x_x,\ldots,x_n\)%20=%20x_1^2%20+%20x_2^2%20+%20\cdots%20+%20x_n^2%20)
-* 时序图
-* 甘特图
 * TOC
-* mermaid时序图、流程图
-
+* mermaid时序图、流程图、甘特图
+* ...
 
 [1]:http://www.baidu.com "百度"
 [2]:https://avatars0.githubusercontent.com/u/37428346?s=96&v=4 "提示信息"
