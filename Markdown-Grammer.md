@@ -21,6 +21,8 @@
 ***
 ## 5.图片
 ![替代文字](https://avatars0.githubusercontent.com/u/37428346?s=96&v=4 "提示信息")
+
+![替代文字][2]
 ## 6.超链接
 [百度一下(markdown)](http://baidu.com "百度Hint")  
 <a href="http://baidu.com" target="_blank">百度一下(html格式)</a>
@@ -51,8 +53,9 @@
 2. 项目2
 ## 8.表格
 <!--第二行是为了把内容和表头分开-->
+<!--左对齐 居中对齐 右对齐-->
 姓名|技能|排行
---|:--:|--:
+-|:-:|-:
 刘备|哭|大哥
 关羽|打|二哥
 张飞|骂|三弟
@@ -60,7 +63,7 @@
 <!--单行代码-->
 `create database hero;`
 <!--代码块-->
-```
+```C++
 int add(int x, int y){
      return x + y;
 }
@@ -77,4 +80,5 @@ cond(yes)->e
 cond(no)->op
 ```
 [1]:http://www.baidu.com "百度"
+[2]:https://avatars0.githubusercontent.com/u/37428346?s=96&v=4 "提示信息"
 [top](#top)
