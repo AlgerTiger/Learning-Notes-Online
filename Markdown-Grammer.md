@@ -1,4 +1,5 @@
 <span id="top"></span>
+[end](#end)
 ## 1.标题
 # 这是一级标题
 ## 这是二级标题
@@ -27,7 +28,7 @@
 [百度一下(markdown)](http://baidu.com "百度Hint")  
 <a href="http://baidu.com" target="_blank">百度一下(html格式)</a>
 
-[百度一下(脚注)][1]
+[百度一下(参考式)][1]
 <www.baidu.com>
 ## 7.列表
 ### 无序列表(-或=或*)
@@ -69,16 +70,36 @@ int add(int x, int y){
 }
 fun();
 ```
-## 10.流程图（github不支持）
-```flow
-st=>start: 开始
-op=>operation: My Operation
-cond=>condition: Yes or No?
-e=>end
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```
+## 10.HTML原始码
+<table>
+    <tr>
+        <th rowspan="2">值班人员</th>
+        <th>星期一</th>
+        <th>星期二</th>
+        <th>星期三</th>
+    </tr>
+    <tr>
+        <td>李强</td>
+        <td>张明</td>
+        <td>王平</td>
+    </tr>
+</table>
+
+## 11.待办事宜
+* [ ] 早起跑步
+* [x] 看书
+## 12.一些github不支持的markdown用法
+* 脚注
+* 流程图
+* LaTex公式（可以使用折中方案codecogs）  
+![](https://latex.codecogs.com/gif.latex?sum_{i=1}^n%20a_i=0)  
+![](https://latex.codecogs.com/gif.latex?f\(x_1,x_x,\ldots,x_n\)%20=%20x_1^2%20+%20x_2^2%20+%20\cdots%20+%20x_n^2%20)
+* 时序图
+* 甘特图
+* TOC
+
+
 [1]:http://www.baidu.com "百度"
 [2]:https://avatars0.githubusercontent.com/u/37428346?s=96&v=4 "提示信息"
 [top](#top)
+<span id="end"></span>
