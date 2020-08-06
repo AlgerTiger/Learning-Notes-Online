@@ -97,6 +97,7 @@ fun();
 * 时序图
 * 甘特图
 * TOC
+* mermaid时序图、流程图
 
 
 [1]:http://www.baidu.com "百度"
