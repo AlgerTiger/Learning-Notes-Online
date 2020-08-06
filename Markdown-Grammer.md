@@ -95,7 +95,7 @@ fun();
 ![](https://latex.codecogs.com/gif.latex?sum_{i=1}^n%20a_i=0)  
 ![](https://latex.codecogs.com/gif.latex?f\(x_1,x_x,\ldots,x_n\)%20=%20x_1^2%20+%20x_2^2%20+%20\cdots%20+%20x_n^2%20)
 * TOC
-* mermaid时序图、流程图、甘特图
+* [mermaid](https://mermaid-js.github.io/mermaid)时序图、流程图、甘特图
 * ...
 
 [1]:http://www.baidu.com "百度"
