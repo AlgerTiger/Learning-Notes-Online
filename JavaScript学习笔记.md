@@ -37,9 +37,14 @@
 27.	建议switch…case结构可以用对象结构代替。
 28.	configurable为false时，value、writable、enumerable和configurable都不能被修改了。configurable还决定了目标属性是否可以被删除（delete）。
 29.	有时需要冻结对象的读写状态，防止对象被改变。JavaScript 提供了三种冻结方法，最弱的一种是Object.preventExtensions，其次是Object.seal，最强的是Object.freeze。
-30.   Array：push方法用于在数组的末端添加一个或多个元素，并返回添加新元素后的数组长度；pop方法用于删除数组的最后一个元素，并返回该元素；shift()方法用于删除数组的第一个元素，并返回该元素；unshift()方法用于在数组的第一个位置添加元素，并返回添加新元素后的数组长度。
-31.   Array：push和pop结合使用，就构成了“后进先出”的栈结构（stack）；push()和shift()结合使用，就构成了“先进先出”的队列结构（queue）。
-32.   Array：slice()方法的一个重要应用，是将类似数组的对象转为真正的数组。
+30.   Array
+* push方法用于在数组的末端添加一个或多个元素，并返回添加新元素后的数组长度；pop方法用于删除数组的最后一个元素，并返回该元素；shift()方法用于删除数组的第一个元素，并返回该元素；unshift()方法用于在数组的第一个位置添加元素，并返回添加新元素后的数组长度。
+* push和pop结合使用，就构成了“后进先出”的栈结构（stack）；push()和shift()结合使用，就构成了“先进先出”的队列结构（queue）。
+* slice()方法的一个重要应用，是将类似数组的对象转为真正的数组。
+* splice()方法用于删除原数组的一部分成员，并可以在删除的位置添加新的数组成员，返回值是被删除的元素。
+* map方法将数组的所有成员依次传入参数函数，然后把每一次的执行结果组成一个新数组返回。
+* reduce方法和reduceRight方法依次处理数组的每个成员，最终累计为一个值。
+
 
 [跳转到文章开头](#home)
 <span id="end"></span>
