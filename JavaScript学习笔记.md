@@ -37,7 +37,7 @@
 27.	建议switch…case结构可以用对象结构代替。
 28.	configurable为false时，value、writable、enumerable和configurable都不能被修改了。configurable还决定了目标属性是否可以被删除（delete）。
 29.	有时需要冻结对象的读写状态，防止对象被改变。JavaScript 提供了三种冻结方法，最弱的一种是Object.preventExtensions，其次是Object.seal，最强的是Object.freeze。
-30.   Array
+30.   Array：
 * push方法用于在数组的末端添加一个或多个元素，并返回添加新元素后的数组长度；pop方法用于删除数组的最后一个元素，并返回该元素；shift()方法用于删除数组的第一个元素，并返回该元素；unshift()方法用于在数组的第一个位置添加元素，并返回添加新元素后的数组长度。
 * push和pop结合使用，就构成了“后进先出”的栈结构（stack）；push()和shift()结合使用，就构成了“先进先出”的队列结构（queue）。
 * slice()方法的一个重要应用，是将类似数组的对象转为真正的数组。
@@ -59,6 +59,26 @@
 * Boolean(function () {}) // true
 * Boolean(/foo/) // true
 32. 使用双重的否运算符（!）也可以将任意值转为对应的布尔值。(例：!!undifined  //false)
-
+33. toString方法只能将十进制的数，转为其他进制的字符串。如果要将其他进制的数，转回十进制，需要使用parseInt方法。
+34. Number：
+* Number.prototype.toFixed();先将一个数转为指定位数的小数，然后返回这个小数对应的字符串。
+* Number.prototype.toExponential();将一个数转为科学计数法形式。
+* Number.prototype.toPrecision();将一个数转为指定位数的有效数字。
+* Number.prototype.toLocaleString(); 返回一个字符串，表示当前数字在该地区的当地书写形式。
+35. 在对象的prototype对象上面自定义方法，从而被对象的实例继承。
+36. Stirng：
+* 静态方法：String.fromCharCode()；该方法的参数是一个或多个数值，代表 Unicode 码点，返回值是这些码点组成的字符串。
+* 实例属性：String.prototype.length；
+* 实例方法：
+  * String.prototype.charAt()；
+  * String.prototype.charCodeAt()；（相当于String.fromCharCode()的逆操作。）
+  * String.prototype.concat()；
+  * String.prototype.slice()；从原字符串取出子字符串并返回，不改变原字符串。
+  * String.prototype.substring()；返回字串，不推荐使用，因为若第一个参数大于第二个参数，参数位置会自动互换，违反直觉。
+  * String.prototype.substr()；返回字串，第二个参数是字串长度。
+  * String.prototype.indexOf()，String.prototype.lastIndexOf()；
+  * String.prototype.trim()；
+  
+   
 [跳转到文章开头](#home)
 <span id="end"></span>
