@@ -44,7 +44,21 @@
 * splice()方法用于删除原数组的一部分成员，并可以在删除的位置添加新的数组成员，返回值是被删除的元素。
 * map方法将数组的所有成员依次传入参数函数，然后把每一次的执行结果组成一个新数组返回。
 * reduce方法和reduceRight方法依次处理数组的每个成员，最终累计为一个值。
-
+* indexOf()，lastIndexOf()
+31. Boolean 函数的类型转换作用
+* Boolean(undefined) // false
+* Boolean(null) // false
+* Boolean(0) // false
+* Boolean('') // false
+* Boolean(NaN) // false
+---
+* Boolean(1) // true
+* Boolean('false') // true
+* Boolean([]) // true
+* Boolean({}) // true
+* Boolean(function () {}) // true
+* Boolean(/foo/) // true
+32. 使用双重的否运算符（!）也可以将任意值转为对应的布尔值。(例：!!undifined  //false)
 
 [跳转到文章开头](#home)
 <span id="end"></span>
