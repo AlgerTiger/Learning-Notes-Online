@@ -51,7 +51,7 @@
     * Boolean(0) // false
     * Boolean('') // false
     * Boolean(NaN) // false
----
+    ---
     * Boolean(1) // true
     * Boolean('false') // true
     * Boolean([]) // true
@@ -126,8 +126,8 @@
     * JSON.stringify()；将一个值转为 JSON 字符串。该字符串符合 JSON 格式，并且可以被JSON.parse方法还原。
     * JSON.parse()；将 JSON 字符串转换成对应的值。
 42. JavaScript面向对象编程：
-    *. JavaScript 语言的对象体系，不是基于“类”的，而是基于构造函数（constructor）和原型链（prototype）。
-    *. JavaScript 语言使用构造函数（constructor）作为对象的模板。
+    *. JavaScript语言的对象体系，不是基于“类”的，而是基于构造函数（constructor）和原型链（prototype）。
+    *. JavaScript语言使用构造函数（constructor）作为对象的模板。
     *. 构造函数的两个特点：
         * 函数体内部使用了this关键字，代表了所要生成的对象实例。
         * 生成对象的时候，必须使用new命令。
