@@ -187,7 +187,9 @@
    * setTimeout()；指定某个函数或某段代码，在多少毫秒之后执行。它返回一个整数，表示定时器的编号，以后可以用来取消这个定时器。
    * setInterval()；指定某个任务每隔一段时间就执行一次，也就是无限次的定时执行。  
    *注意：为了确保两次执行之间有固定的间隔，可以不用setInterval，而是每次执行结束后，使用setTimeout指定下一次执行的具体时间。*
-   * 
+   * clearTimeout()、clearInterval()；传入计数器编号。
+46. debounce：防抖动
+
  
 [跳转到文章开头](#home)
 <span id="end"></span>
