@@ -37,117 +37,134 @@
 27.	建议switch…case结构可以用对象结构代替。
 28.	configurable为false时，value、writable、enumerable和configurable都不能被修改了。configurable还决定了目标属性是否可以被删除（delete）。
 29.	有时需要冻结对象的读写状态，防止对象被改变。JavaScript 提供了三种冻结方法，最弱的一种是Object.preventExtensions，其次是Object.seal，最强的是Object.freeze。
-30.   Array：
-* push方法用于在数组的末端添加一个或多个元素，并返回添加新元素后的数组长度；pop方法用于删除数组的最后一个元素，并返回该元素；shift()方法用于删除数组的第一个元素，并返回该元素；unshift()方法用于在数组的第一个位置添加元素，并返回添加新元素后的数组长度。
-* push和pop结合使用，就构成了“后进先出”的栈结构（stack）；push()和shift()结合使用，就构成了“先进先出”的队列结构（queue）。
-* slice()方法的一个重要应用，是将类似数组的对象转为真正的数组。
-* splice()方法用于删除原数组的一部分成员，并可以在删除的位置添加新的数组成员，返回值是被删除的元素。
-* map方法将数组的所有成员依次传入参数函数，然后把每一次的执行结果组成一个新数组返回。
-* reduce方法和reduceRight方法依次处理数组的每个成员，最终累计为一个值。
-* indexOf()，lastIndexOf()
+30. Array：
+    * push方法用于在数组的末端添加一个或多个元素，并返回添加新元素后的数组长度；pop方法用于删除数组的最后一个元素，并返回该元素；shift()方法用于删除数组的第一个元素，并返回该元素；unshift()方法用于在数组的第一个位置添加元素，并返回添加新元素后的数组长度。
+    * push和pop结合使用，就构成了“后进先出”的栈结构（stack）；push()和shift()结合使用，就构成了“先进先出”的队列结构（queue）。
+    * slice()方法的一个重要应用，是将类似数组的对象转为真正的数组。
+    * splice()方法用于删除原数组的一部分成员，并可以在删除的位置添加新的数组成员，返回值是被删除的元素。
+    * map方法将数组的所有成员依次传入参数函数，然后把每一次的执行结果组成一个新数组返回。
+    * reduce方法和reduceRight方法依次处理数组的每个成员，最终累计为一个值。
+    * indexOf()，lastIndexOf()
 31. Boolean 函数的类型转换作用
-* Boolean(undefined) // false
-* Boolean(null) // false
-* Boolean(0) // false
-* Boolean('') // false
-* Boolean(NaN) // false
+    * Boolean(undefined) // false
+    * Boolean(null) // false
+    * Boolean(0) // false
+    * Boolean('') // false
+    * Boolean(NaN) // false
 ---
-* Boolean(1) // true
-* Boolean('false') // true
-* Boolean([]) // true
-* Boolean({}) // true
-* Boolean(function () {}) // true
-* Boolean(/foo/) // true
+    * Boolean(1) // true
+    * Boolean('false') // true
+    * Boolean([]) // true
+    * Boolean({}) // true
+    * Boolean(function () {}) // true
+    * Boolean(/foo/) // true
 32. 使用双重的否运算符（!）也可以将任意值转为对应的布尔值。(例：!!undifined  //false)
 33. toString方法只能将十进制的数，转为其他进制的字符串。如果要将其他进制的数，转回十进制，需要使用parseInt方法。
 34. Number：
-* Number.prototype.toFixed();先将一个数转为指定位数的小数，然后返回这个小数对应的字符串。
-* Number.prototype.toExponential();将一个数转为科学计数法形式。
-* Number.prototype.toPrecision();将一个数转为指定位数的有效数字。
-* Number.prototype.toLocaleString(); 返回一个字符串，表示当前数字在该地区的当地书写形式。
+    * Number.prototype.toFixed();先将一个数转为指定位数的小数，然后返回这个小数对应的字符串。
+    * Number.prototype.toExponential();将一个数转为科学计数法形式。
+    * Number.prototype.toPrecision();将一个数转为指定位数的有效数字。
+    * Number.prototype.toLocaleString(); 返回一个字符串，表示当前数字在该地区的当地书写形式。
 35. 在对象的prototype对象上面自定义方法，从而被对象的实例继承。
 36. Stirng：
-* 静态方法：String.fromCharCode()；该方法的参数是一个或多个数值，代表 Unicode 码点，返回值是这些码点组成的字符串。
-* 实例属性：String.prototype.length；
-* 实例方法：
-  * String.prototype.charAt()；
-  * String.prototype.charCodeAt()；（相当于String.fromCharCode()的逆操作。）
-  * String.prototype.concat()；
-  * String.prototype.slice()；从原字符串取出子字符串并返回，不改变原字符串。
-  * String.prototype.substring()；返回字串，不推荐使用，因为若第一个参数大于第二个参数，参数位置会自动互换，违反直觉。
-  * String.prototype.substr()；返回字串，第二个参数是字串长度。
-  * String.prototype.indexOf()，String.prototype.lastIndexOf()；
-  * String.prototype.trim()；
-  * String.prototype.toLowerCase()，String.prototype.toUpperCase()；
-  * String.prototype.search()，String.prototype.replace();
-  * String.prototype.split();
+    * 静态方法：String.fromCharCode()；该方法的参数是一个或多个数值，代表 Unicode 码点，返回值是这些码点组成的字符串。
+    * 实例属性：String.prototype.length；
+    * 实例方法：
+        * String.prototype.charAt()；
+        * String.prototype.charCodeAt()；（相当于String.fromCharCode()的逆操作。）
+        * String.prototype.concat()；
+        * String.prototype.slice()；从原字符串取出子字符串并返回，不改变原字符串。
+        * String.prototype.substring()；返回字串，不推荐使用，因为若第一个参数大于第二个参数，参数位置会自动互换，违反直觉。
+        * String.prototype.substr()；返回字串，第二个参数是字串长度。
+        * String.prototype.indexOf()，String.prototype.lastIndexOf()；
+        * String.prototype.trim()；
+        * String.prototype.toLowerCase()，String.prototype.toUpperCase()；
+        * String.prototype.search()，String.prototype.replace();
+        * String.prototype.split();
 37. 其他对象求值的时候，都是默认调用.valueOf()方法，但是Date实例求值的时候，默认调用的是toString()方法。
 38. Date构造函数的参数：
-  * 年：使用四位数年份，比如2000。如果写成两位数或个位数，则加上1900，即10代表1910年。如果是负数，表示公元前。
-  * 月：0表示一月，依次类推，11表示12月。
-  * 日：1到31。
-  * 小时：0到23。
-  * 分钟：0到59。
-  * 秒：0到59
-  * 毫秒：0到999。
+    * 年：使用四位数年份，比如2000。如果写成两位数或个位数，则加上1900，即10代表1910年。如果是负数，表示公元前。
+    * 月：0表示一月，依次类推，11表示12月。
+    * 日：1到31。
+    * 小时：0到23。
+    * 分钟：0到59。
+    * 秒：0到59
+    * 毫秒：0到999。
 39. 正则表达式
-  * 元字符：.、^、|、\、*、+、?、()、[]、{}
-  * 点字符（.）匹配除回车（\r）、换行(\n) 、行分隔符（\u2028）和段分隔符（\u2029）以外的所有字符。注意，对于码点大于0xFFFF字符，点字符不能正确匹配，会认为这是两个字符。
-  * 位置字符
-    * ^ 表示字符串的开始位置
-    * $ 表示字符串的结束位置
-  * 选择符（|）：或关系
-  * ^：脱字符
-  * -：连字符
-  * 字符类：所有可供选择的字符都放在方括号内，比如[xyz] 表示x、y、z之中任选一个匹配。
-  * 预定义模式
-    * \d 匹配0-9之间的任一数字，相当于[0-9]。
-    * \D 匹配所有0-9以外的字符，相当于[^0-9]。
-    * \w 匹配任意的字母、数字和下划线，相当于[A-Za-z0-9_]。
-    * \W 除所有字母、数字和下划线以外的字符，相当于[^A-Za-z0-9_]。
-    * \s 匹配空格（包括换行符、制表符、空格符等），相等于[ \t\r\n\v\f]。
-    * \S 匹配非空格的字符，相当于[^ \t\r\n\v\f]。
-    * \b 匹配词的边界。
-    * \B 匹配非词边界，即在词的内部。
-  * 重复类：模式的精确匹配次数，使用大括号（{}）表示。{n}表示恰好重复n次，{n,}表示至少重复n次，{n,m}表示重复不少于n次，不多于m次。
-  * 量词符用来设定某个模式出现的次数。
-    * ?问号表示某个模式出现0次或1次，等同于{0, 1}。
-    * *星号表示某个模式出现0次或多次，等同于{0,}。
-    * +加号表示某个模式出现1次或多次，等同于{1,}。
-  * 非捕获组：（？：x）,不单独输出括号内不得内容。
-  * 先行断言x（？=y）、先行否定断言x（？！y）
+    * 元字符：.、^、|、\、*、+、?、()、[]、{}
+    * 点字符（.）匹配除回车（\r）、换行(\n) 、行分隔符（\u2028）和段分隔符（\u2029）以外的所有字符。注意，对于码点大于0xFFFF字符，点字符不能正确匹配，会认为这是两个字符。
+    * 位置字符
+        * ^ 表示字符串的开始位置
+        * $ 表示字符串的结束位置
+    * 选择符（|）：或关系
+    * ^：脱字符
+    * -：连字符
+    * 字符类：所有可供选择的字符都放在方括号内，比如[xyz] 表示x、y、z之中任选一个匹配。
+    * 预定义模式
+        * \d 匹配0-9之间的任一数字，相当于[0-9]。
+        * \D 匹配所有0-9以外的字符，相当于[^0-9]。
+        * \w 匹配任意的字母、数字和下划线，相当于[A-Za-z0-9_]。
+        * \W 除所有字母、数字和下划线以外的字符，相当于[^A-Za-z0-9_]。
+        * \s 匹配空格（包括换行符、制表符、空格符等），相等于[ \t\r\n\v\f]。
+        * \S 匹配非空格的字符，相当于[^ \t\r\n\v\f]。
+        * \b 匹配词的边界。
+        * \B 匹配非词边界，即在词的内部。
+    * 重复类：模式的精确匹配次数，使用大括号（{}）表示。{n}表示恰好重复n次，{n,}表示至少重复n次，{n,m}表示重复不少于n次，不多于m次。
+    * 量词符用来设定某个模式出现的次数。
+        * ?问号表示某个模式出现0次或1次，等同于{0, 1}。
+        * *星号表示某个模式出现0次或多次，等同于{0,}。
+        * +加号表示某个模式出现1次或多次，等同于{1,}。
+    * 非捕获组：（？：x）,不单独输出括号内不得内容。
+    * 先行断言x（？=y）、先行否定断言x（？！y）
 40. JSON对象的严格规定：
-  * 复合类型的值只能是数组或对象，不能是函数、正则表达式对象、日期对象。
-  * 原始类型的值只有四种：字符串、数值（必须以十进制表示）、布尔值和null（不能使用NaN, Infinity, -Infinity和undefined）。
-  * 字符串必须使用双引号表示，不能使用单引号。 
-  * 对象的键名必须放在双引号里面。
-  * 数组或对象最后一个成员的后面，不能加逗号。
+    * 复合类型的值只能是数组或对象，不能是函数、正则表达式对象、日期对象。
+    * 原始类型的值只有四种：字符串、数值（必须以十进制表示）、布尔值和null（不能使用NaN, Infinity, -Infinity和undefined）。
+    * 字符串必须使用双引号表示，不能使用单引号。 
+    * 对象的键名必须放在双引号里面。
+    * 数组或对象最后一个成员的后面，不能加逗号。
 41. JSON对象的方法
-  * JSON.stringify()；将一个值转为 JSON 字符串。该字符串符合 JSON 格式，并且可以被JSON.parse方法还原。
-  * JSON.parse()；将 JSON 字符串转换成对应的值。
+    * JSON.stringify()；将一个值转为 JSON 字符串。该字符串符合 JSON 格式，并且可以被JSON.parse方法还原。
+    * JSON.parse()；将 JSON 字符串转换成对应的值。
 42. JavaScript面向对象编程：
-    1. JavaScript 语言的对象体系，不是基于“类”的，而是基于构造函数（constructor）和原型链（prototype）。
-    2. JavaScript 语言使用构造函数（constructor）作为对象的模板。
-    3. 构造函数的两个特点：
+    *. JavaScript 语言的对象体系，不是基于“类”的，而是基于构造函数（constructor）和原型链（prototype）。
+    *. JavaScript 语言使用构造函数（constructor）作为对象的模板。
+    *. 构造函数的两个特点：
         * 函数体内部使用了this关键字，代表了所要生成的对象实例。
         * 生成对象的时候，必须使用new命令。
-    4. 构造函数内部使用严格模式时，直接调用构造函数就会报错。
-    5. new命令的原理：
+    *. 构造函数内部使用严格模式时，直接调用构造函数就会报错。
+    *. new命令的原理：
         * 创建一个空对象，作为将要返回的对象实例。
         * 将这个空对象的原型，指向构造函数的prototype属性。
         * 将这个空对象赋值给函数内部的this关键字。
         * 开始执行构造函数内部的代码。
-    6. new.target：用于判断函数调用的时候，是否使用new命令。
-    7. this就是属性或方法“当前”所在的对象。
-    8. 关于this的总结：JavaScript 语言之中，一切皆对象，运行环境也是对象，所以函数都是在某个对象之中运行，this就是函数运行时所在的对象（环境）。这本来并不会让用户糊涂，但是 JavaScript 支持运行环境动态切换，也就是说，this的指向是动态的，没有办法事先确定到底指向哪个对象，这才是最让初学者感到困惑的地方。
-    9. 绑定this的方法：
+    *. new.target：用于判断函数调用的时候，是否使用new命令。
+    *. this就是属性或方法“当前”所在的对象。
+    *. 关于this的总结：JavaScript 语言之中，一切皆对象，运行环境也是对象，所以函数都是在某个对象之中运行，this就是函数运行时所在的对象（环境）。这本来并不会让用户糊涂，但是 JavaScript 支持运行环境动态切换，也就是说，this的指向是动态的，没有办法事先确定到底指向哪个对象，这才是最让初学者感到困惑的地方。
+    *. 绑定this的方法：
         * Function.prototype.call()； 另外，call方法的一个应用是调用对象的原生方法。
         * Function.prototype.apply()；接收一个数组作为函数执行时的参数
         * Function.prototype.bind()；将函数体内的this绑定到某个对象，然后返回一个新函数。
-    10. prototype：JavaScript 继承机制的设计思想就是，原型对象的所有属性和方法，都能被实例对象共享。
-    11. instanceof 运算符：返回一个布尔值，表示对象是否为某个构造函数的实例。
-    12. 封装私有变量：立即执行函数（Immediately-Invoked Function Expression，IIFE）。
-    13. 
+    *. prototype：JavaScript 继承机制的设计思想就是，原型对象的所有属性和方法，都能被实例对象共享。
+    *. Object.prototype对象有没有它的原型呢？回答是Object.prototype的原型是null。null没有任何属性和方法，也没有自己的原型。因此，原型链的尽头就是null。
+    *. instanceof 运算符：返回一个布尔值，表示对象是否为某个构造函数的实例。
+    *. 封装私有变量：立即执行函数（Immediately-Invoked Function Expression，IIFE）。
+    *. 获取实例对象obj的原型对象，有三种方法：
+        * obj.__proto__
+        * obj.constructor.prototype
+        * Object.getPrototypeOf(obj)（推荐）
+    *. 在改变原型对象时，一般要同时设置constructor属性。
+    *. Object.getOwnPropertyNames方法返回所有键名，不管是否可以遍历。只获取那些可以遍历的属性，使用Object.keys方法。
+    *. hasOwnProperty方法返回一个布尔值，用于判断某个属性定义在对象自身，还是定义在原型链上。hasOwnProperty方法是 JavaScript 之中唯一一个处理对象属性时，不会遍历原型链的方法。
+    *. in 运算符和 for...in 循环
+    *. 严格模式下：
+        * 只读属性不可写、不可配置属性不可删除
+        * 只设置了取值器的属性不可写
+        * 禁止扩展的对象不可扩展
+        * eval、arguments不可用作标识名
+        * 函数不能有重名的参数
+        * 禁止八进制的前缀0表示法
+        ---
+        * 全局变量显式声明
     
   
   
