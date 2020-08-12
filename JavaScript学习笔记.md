@@ -141,8 +141,13 @@
     7. this就是属性或方法“当前”所在的对象。
     8. 关于this的总结：JavaScript 语言之中，一切皆对象，运行环境也是对象，所以函数都是在某个对象之中运行，this就是函数运行时所在的对象（环境）。这本来并不会让用户糊涂，但是 JavaScript 支持运行环境动态切换，也就是说，this的指向是动态的，没有办法事先确定到底指向哪个对象，这才是最让初学者感到困惑的地方。
     9. 绑定this的方法：
-      * Function.prototype.call()； 另外，call方法的一个应用是调用对象的原生方法。
-      * Function.prototype.apply()；接收一个数组作为函数执行时的参数
+        * Function.prototype.call()； 另外，call方法的一个应用是调用对象的原生方法。
+        * Function.prototype.apply()；接收一个数组作为函数执行时的参数
+        * Function.prototype.bind()；将函数体内的this绑定到某个对象，然后返回一个新函数。
+    10. prototype：JavaScript 继承机制的设计思想就是，原型对象的所有属性和方法，都能被实例对象共享。
+    11. instanceof 运算符：返回一个布尔值，表示对象是否为某个构造函数的实例。
+    12. 封装私有变量：立即执行函数（Immediately-Invoked Function Expression，IIFE）。
+    13. 
     
   
   
