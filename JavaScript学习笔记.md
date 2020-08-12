@@ -125,38 +125,38 @@
 41. JSON对象的方法
     * JSON.stringify()；将一个值转为 JSON 字符串。该字符串符合 JSON 格式，并且可以被JSON.parse方法还原。
     * JSON.parse()；将 JSON 字符串转换成对应的值。
-42. JavaScript面向对象编程：
-    *. JavaScript语言的对象体系，不是基于“类”的，而是基于构造函数（constructor）和原型链（prototype）。
-    *. JavaScript语言使用构造函数（constructor）作为对象的模板。
-    *. 构造函数的两个特点：
+42. JavaScript面向对象编程
+    * JavaScript语言的对象体系，不是基于“类”的，而是基于构造函数（constructor）和原型链（prototype）。
+    * JavaScript语言使用构造函数（constructor）作为对象的模板。
+    * 构造函数的两个特点：
         * 函数体内部使用了this关键字，代表了所要生成的对象实例。
         * 生成对象的时候，必须使用new命令。
-    *. 构造函数内部使用严格模式时，直接调用构造函数就会报错。
-    *. new命令的原理：
+    * 构造函数内部使用严格模式时，直接调用构造函数就会报错。
+    * new命令的原理：
         * 创建一个空对象，作为将要返回的对象实例。
         * 将这个空对象的原型，指向构造函数的prototype属性。
         * 将这个空对象赋值给函数内部的this关键字。
         * 开始执行构造函数内部的代码。
-    *. new.target：用于判断函数调用的时候，是否使用new命令。
-    *. this就是属性或方法“当前”所在的对象。
+    * new.target：用于判断函数调用的时候，是否使用new命令。
+    * this就是属性或方法“当前”所在的对象。
     *. 关于this的总结：JavaScript 语言之中，一切皆对象，运行环境也是对象，所以函数都是在某个对象之中运行，this就是函数运行时所在的对象（环境）。这本来并不会让用户糊涂，但是 JavaScript 支持运行环境动态切换，也就是说，this的指向是动态的，没有办法事先确定到底指向哪个对象，这才是最让初学者感到困惑的地方。
-    *. 绑定this的方法：
+    * 绑定this的方法：
         * Function.prototype.call()； 另外，call方法的一个应用是调用对象的原生方法。
         * Function.prototype.apply()；接收一个数组作为函数执行时的参数
         * Function.prototype.bind()；将函数体内的this绑定到某个对象，然后返回一个新函数。
-    *. prototype：JavaScript 继承机制的设计思想就是，原型对象的所有属性和方法，都能被实例对象共享。
-    *. Object.prototype对象有没有它的原型呢？回答是Object.prototype的原型是null。null没有任何属性和方法，也没有自己的原型。因此，原型链的尽头就是null。
-    *. instanceof 运算符：返回一个布尔值，表示对象是否为某个构造函数的实例。
-    *. 封装私有变量：立即执行函数（Immediately-Invoked Function Expression，IIFE）。
-    *. 获取实例对象obj的原型对象，有三种方法：
+    * prototype：JavaScript 继承机制的设计思想就是，原型对象的所有属性和方法，都能被实例对象共享。
+    * Object.prototype对象有没有它的原型呢？回答是Object.prototype的原型是null。null没有任何属性和方法，也没有自己的原型。因此，原型链的尽头就是null。
+    * instanceof 运算符：返回一个布尔值，表示对象是否为某个构造函数的实例。
+    * 封装私有变量：立即执行函数（Immediately-Invoked Function Expression，IIFE）。
+    * 获取实例对象obj的原型对象，有三种方法：
         * obj.__proto__
         * obj.constructor.prototype
         * Object.getPrototypeOf(obj)（推荐）
-    *. 在改变原型对象时，一般要同时设置constructor属性。
-    *. Object.getOwnPropertyNames方法返回所有键名，不管是否可以遍历。只获取那些可以遍历的属性，使用Object.keys方法。
-    *. hasOwnProperty方法返回一个布尔值，用于判断某个属性定义在对象自身，还是定义在原型链上。hasOwnProperty方法是 JavaScript 之中唯一一个处理对象属性时，不会遍历原型链的方法。
-    *. in 运算符和 for...in 循环
-    *. 严格模式下：
+    * 在改变原型对象时，一般要同时设置constructor属性。
+    * Object.getOwnPropertyNames方法返回所有键名，不管是否可以遍历。只获取那些可以遍历的属性，使用Object.keys方法。
+    * hasOwnProperty方法返回一个布尔值，用于判断某个属性定义在对象自身，还是定义在原型链上。hasOwnProperty方法是 JavaScript 之中唯一一个处理对象属性时，不会遍历原型链的方法。
+    * in 运算符和 for...in 循环
+    * 严格模式下：
         * 只读属性不可写、不可配置属性不可删除
         * 只设置了取值器的属性不可写
         * 禁止扩展的对象不可扩展
@@ -165,8 +165,17 @@
         * 禁止八进制的前缀0表示法
         ---
         * 全局变量显式声明
-    
-  
-  
+        * 禁止this关键字指向全局对象
+        * 禁止使用fn.callee、fn.caller、fn.arguments,这意味着不能在函数内部得到调用栈了
+        * 禁止使用arguments.callee、arguments.caller
+        * 禁止删除变量（只有对象的属性，且属性的描述对象的configurable属性设置为true，才能被delete命令删除。）
+        * 禁止使用with语句
+        * 创设eval作用域
+        * arguments不在追踪参数的变化
+        ---
+        * 非函数代码块不得声明函数（ES6是允许的）
+        * 保留字：implements、interface、let、package、private、protected、public、static、yield等
+43. hjjj
+ 
 [跳转到文章开头](#home)
 <span id="end"></span>
