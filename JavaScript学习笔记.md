@@ -189,7 +189,56 @@
    *注意：为了确保两次执行之间有固定的间隔，可以不用setInterval，而是每次执行结束后，使用setTimeout指定下一次执行的具体时间。*
    * clearTimeout()、clearInterval()；传入计数器编号。
 46. debounce：防抖动
-
- 
+47. Promise 对象：
+   * JavaScript 的异步操作解决方案，为异步操作提供统一接口。它起到代理作用（proxy），充当异步操作与回调函数之间的中介，使得异步操作具备同步操作的接口。Promise 可以让异步操作写起来，就像在写同步操作的流程，而不必一层层地嵌套回调函数。
+   * Promise对象的状态：
+      * 异步操作未完成（pending）
+      * 异步操作成功（fulfilled）
+      * 异步操作失败（rejected）
+   * Promise 对象的报错具有传递性。
+   * Promise 的回调函数属于异步任务，会在同步任务之后执行。但是，Promise 的回调函数不是正常的异步任务，而是微任务（microtask）。它们的区别在于，正常任务追加到下一轮事件循环，微任务追加到本轮事件循环。这意味着，**微任务的执行时间一定早于正常任务**。
+48.DOM
+   * DOM 是 JavaScript 操作网页的接口，全称为“文档对象模型”（Document Object Model）。它的作用是将网页转为一个 JavaScript 对象，从而可以用脚本进行各种操作（比如增删内容）。
+   * 节点（node）的七种类型：
+      * Document：整个文档树的顶层节点
+      * DocumentType：doctype标签（比如<!DOCTYPE html>）
+      * Element：网页的各种HTML标签（比如<body>、<a>等）
+      * Attr：网页元素的属性（比如class="right"）
+      * Text：标签之间或标签包含的文本
+      * Comment：注释
+      * DocumentFragment：文档的片段
+   * Node属性：
+      * Node.prototype.nodeType
+      * Node.prototype.nodeName
+      * Node.prototype.nodeValue
+      *只有文本节点（text）、注释节点（comment）和属性节点（attr）有文本值*
+      * Node.prototype.textContent
+      * Node.prototype.baseURI
+      * Node.prototype.ownerDocument
+      * Node.prototype.nextSibling
+      * Node.prototype.previousSibling
+      * Node.prototype.parentNode
+      *一个节点的父节点只可能是三种类型：元素节点（element）、文档节点（document）和文档片段节点（documentfragment）。*
+      * Node.prototype.parentElement
+      * Node.prototype.firstChild，Node.prototype.lastChild
+      * Node.prototype.childNodes
+      * Node.prototype.isConnected
+   * Node方法：
+      * Node.prototype.appendChild()
+      * Node.prototype.hasChildNodes()
+      * Node.prototype.cloneNode()
+      * Node.prototype.insertBefore()
+      * Node.prototype.removeChild()
+      * Node.prototype.replaceChild()
+      * Node.prototype.contains()
+      * Node.prototype.compareDocumentPosition()
+      * Node.prototype.isEqualNode()，Node.prototype.isSameNode()
+      * Node.prototype.normalize()
+      * Node.prototype.getRootNode()
+   * NodeList可以包含各种类型的节点，HTMLCollection只能包含 HTML 元素节点。
+   * 目前，只有Node.childNodes返回的是一个动态集合，其他的 NodeList 都是静态集合。
+   * 
+   
+   
 [跳转到文章开头](#home)
 <span id="end"></span>
