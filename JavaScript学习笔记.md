@@ -237,7 +237,44 @@
       * Node.prototype.getRootNode()
    * NodeList可以包含各种类型的节点，HTMLCollection只能包含 HTML 元素节点。
    * 目前，只有Node.childNodes返回的是一个动态集合，其他的 NodeList 都是静态集合。
-   * 
+   * 与NodeList接口不同，HTMLCollection没有forEach方法，只能使用for循环遍历。HTMLCollection实例都是动态集合，节点的变化会实时反映在集合中。
+   * ParentNode接口：
+      * ParentNode.children
+      * ParentNode.firstElementChild
+      * ParentNode.lastElementChild
+      * ParentNode.childElementCount
+      * ParentNode.append()，ParentNode.prepend()
+   * ChildNode接口：
+      * ChildNode.remove()；从父节点移除当前节点。
+      * ChildNode.before()，ChildNode.after()；插入一个或多个同级节点。两者拥有相同的父节点。
+      * ChildNode.replaceWith()
+   * doucument对象的获取方法：
+      * 正常的网页，直接使用document或window.document。
+      * iframe框架里面的网页，使用iframe节点的contentDocument属性。
+      * Ajax 操作返回的文档，使用XMLHttpRequest对象的responseXML属性。
+      * 内部节点的ownerDocument属性。 
+   * 有些 HTML 属性名是 JavaScript 的保留字，转为 JavaScript 属性时，必须改名。主要是以下两个：
+      * for属性改为htmlFor
+      * class属性改为className
+   * 文本节点（Text）代表元素节点（Element）和属性节点（Attribute）的文本内容。
+   * Text 节点的方法
+      * appendData(); deleteData(); insertData()；replaceData()；subStringData()；
+      * remove()；
+      * splitText()；父元素的normalize方法可以实现逆操作，将它们合并。
+   * CSSStyleDeclaration 接口用来操作元素的样式。三个地方部署了这个接口：
+      * 元素节点的style属性（Element.style）
+      * CSSStyle实例的style属性
+      * window.getComputedStyle()的返回值
+   * CSS对象的两个静态方法：
+      * CSS.escape();用于转移CSS选择器里面的特殊字符。
+      * CSS.supports();判断当前环境是否支持某一句CSS规则。
+   * window.getComputedStyle()；获取浏览器计算后得到的最终规则。伪元素的样式可以通过此方法获取。
+   * CSSRule.type属性返回一个整数值，表示当前规则的类型。最常见的类型有以下几种:
+      * 1：普通样式规则（CSSStyleRule 实例）
+      * 3：@import规则
+      * 4：@media规则（CSSMediaRule 实例）
+      * 5：@font-face规则
+   
    
    
 [跳转到文章开头](#home)
