@@ -176,105 +176,118 @@
         * 非函数代码块不得声明函数（ES6是允许的）
         * 保留字：implements、interface、let、package、private、protected、public、static、yield等
 43. 异步操作的模式：
-   * 回调函数
-   * 事件监听
-   * 发布/订阅
+    * 回调函数
+    * 事件监听
+    * 发布/订阅
 44. 异步操作的流程控制：
-   * 串行执行
-   * 并行执行
-   * 并行与串行的结合
+    * 串行执行
+    * 并行执行
+    * 并行与串行的结合
 45. 定时器：
-   * setTimeout()；指定某个函数或某段代码，在多少毫秒之后执行。它返回一个整数，表示定时器的编号，以后可以用来取消这个定时器。
-   * setInterval()；指定某个任务每隔一段时间就执行一次，也就是无限次的定时执行。  
-   *注意：为了确保两次执行之间有固定的间隔，可以不用setInterval，而是每次执行结束后，使用setTimeout指定下一次执行的具体时间。*
-   * clearTimeout()、clearInterval()；传入计数器编号。
+    * setTimeout()；指定某个函数或某段代码，在多少毫秒之后执行。它返回一个整数，表示定时器的编号，以后可以用来取消这个定时器。
+    * setInterval()；指定某个任务每隔一段时间就执行一次，也就是无限次的定时执行。  
+    *注意：为了确保两次执行之间有固定的间隔，可以不用setInterval，而是每次执行结束后，使用setTimeout指定下一次执行的具体时间。*
+     * clearTimeout()、clearInterval()；传入计数器编号。
 46. debounce：防抖动
 47. Promise 对象：
    * JavaScript 的异步操作解决方案，为异步操作提供统一接口。它起到代理作用（proxy），充当异步操作与回调函数之间的中介，使得异步操作具备同步操作的接口。Promise 可以让异步操作写起来，就像在写同步操作的流程，而不必一层层地嵌套回调函数。
-   * Promise对象的状态：
-      * 异步操作未完成（pending）
-      * 异步操作成功（fulfilled）
-      * 异步操作失败（rejected）
-   * Promise 对象的报错具有传递性。
-   * Promise 的回调函数属于异步任务，会在同步任务之后执行。但是，Promise 的回调函数不是正常的异步任务，而是微任务（microtask）。它们的区别在于，正常任务追加到下一轮事件循环，微任务追加到本轮事件循环。这意味着，**微任务的执行时间一定早于正常任务**。
+    * Promise对象的状态：
+        * 异步操作未完成（pending）
+        * 异步操作成功（fulfilled）
+        * 异步操作失败（rejected）
+    * Promise 对象的报错具有传递性。
+    * Promise 的回调函数属于异步任务，会在同步任务之后执行。但是，Promise 的回调函数不是正常的异步任务，而是微任务（microtask）。它们的区别在于，正常任务追加到下一轮事件循环，微任务追加到本轮事件循环。这意味着，**微任务的执行时间一定早于正常任务**。
 48.DOM
-   * DOM 是 JavaScript 操作网页的接口，全称为“文档对象模型”（Document Object Model）。它的作用是将网页转为一个 JavaScript 对象，从而可以用脚本进行各种操作（比如增删内容）。
-   * 节点（node）的七种类型：
-      * Document：整个文档树的顶层节点
-      * DocumentType：doctype标签（比如<!DOCTYPE html>）
-      * Element：网页的各种HTML标签（比如<body>、<a>等）
-      * Attr：网页元素的属性（比如class="right"）
-      * Text：标签之间或标签包含的文本
-      * Comment：注释
-      * DocumentFragment：文档的片段
-   * Node属性：
-      * Node.prototype.nodeType
-      * Node.prototype.nodeName
-      * Node.prototype.nodeValue
-      *只有文本节点（text）、注释节点（comment）和属性节点（attr）有文本值*
-      * Node.prototype.textContent
-      * Node.prototype.baseURI
-      * Node.prototype.ownerDocument
-      * Node.prototype.nextSibling
-      * Node.prototype.previousSibling
-      * Node.prototype.parentNode
-      *一个节点的父节点只可能是三种类型：元素节点（element）、文档节点（document）和文档片段节点（documentfragment）。*
-      * Node.prototype.parentElement
-      * Node.prototype.firstChild，Node.prototype.lastChild
-      * Node.prototype.childNodes
-      * Node.prototype.isConnected
-   * Node方法：
-      * Node.prototype.appendChild()
-      * Node.prototype.hasChildNodes()
-      * Node.prototype.cloneNode()
-      * Node.prototype.insertBefore()
-      * Node.prototype.removeChild()
-      * Node.prototype.replaceChild()
-      * Node.prototype.contains()
-      * Node.prototype.compareDocumentPosition()
-      * Node.prototype.isEqualNode()，Node.prototype.isSameNode()
-      * Node.prototype.normalize()
-      * Node.prototype.getRootNode()
-   * NodeList可以包含各种类型的节点，HTMLCollection只能包含 HTML 元素节点。
-   * 目前，只有Node.childNodes返回的是一个动态集合，其他的 NodeList 都是静态集合。
-   * 与NodeList接口不同，HTMLCollection没有forEach方法，只能使用for循环遍历。HTMLCollection实例都是动态集合，节点的变化会实时反映在集合中。
-   * ParentNode接口：
-      * ParentNode.children
-      * ParentNode.firstElementChild
-      * ParentNode.lastElementChild
-      * ParentNode.childElementCount
-      * ParentNode.append()，ParentNode.prepend()
-   * ChildNode接口：
-      * ChildNode.remove()；从父节点移除当前节点。
-      * ChildNode.before()，ChildNode.after()；插入一个或多个同级节点。两者拥有相同的父节点。
-      * ChildNode.replaceWith()
-   * doucument对象的获取方法：
-      * 正常的网页，直接使用document或window.document。
-      * iframe框架里面的网页，使用iframe节点的contentDocument属性。
-      * Ajax 操作返回的文档，使用XMLHttpRequest对象的responseXML属性。
-      * 内部节点的ownerDocument属性。 
-   * 有些 HTML 属性名是 JavaScript 的保留字，转为 JavaScript 属性时，必须改名。主要是以下两个：
-      * for属性改为htmlFor
-      * class属性改为className
-   * 文本节点（Text）代表元素节点（Element）和属性节点（Attribute）的文本内容。
-   * Text 节点的方法
-      * appendData(); deleteData(); insertData()；replaceData()；subStringData()；
-      * remove()；
-      * splitText()；父元素的normalize方法可以实现逆操作，将它们合并。
-   * CSSStyleDeclaration 接口用来操作元素的样式。三个地方部署了这个接口：
-      * 元素节点的style属性（Element.style）
-      * CSSStyle实例的style属性
-      * window.getComputedStyle()的返回值
-   * CSS对象的两个静态方法：
-      * CSS.escape();用于转移CSS选择器里面的特殊字符。
-      * CSS.supports();判断当前环境是否支持某一句CSS规则。
-   * window.getComputedStyle()；获取浏览器计算后得到的最终规则。伪元素的样式可以通过此方法获取。
-   * CSSRule.type属性返回一个整数值，表示当前规则的类型。最常见的类型有以下几种:
-      * 1：普通样式规则（CSSStyleRule 实例）
-      * 3：@import规则
-      * 4：@media规则（CSSMediaRule 实例）
-      * 5：@font-face规则
-   
+    * DOM 是 JavaScript 操作网页的接口，全称为“文档对象模型”（Document Object Model）。它的作用是将网页转为一个 JavaScript 对象，从而可以用脚本进行各种操作（比如增删内容）。
+    * 节点（node）的七种类型：
+        * Document：整个文档树的顶层节点
+        * DocumentType：doctype标签（比如<!DOCTYPE html>）
+        * Element：网页的各种HTML标签（比如<body>、<a>等）
+        * Attr：网页元素的属性（比如class="right"）
+        * Text：标签之间或标签包含的文本
+        * Comment：注释
+        * DocumentFragment：文档的片段
+    * Node属性：
+        * Node.prototype.nodeType
+        * Node.prototype.nodeName
+        * Node.prototype.nodeValue
+        *只有文本节点（text）、注释节点（comment）和属性节点（attr）有文本值*
+        * Node.prototype.textContent
+        * Node.prototype.baseURI
+        * Node.prototype.ownerDocument
+        * Node.prototype.nextSibling
+        * Node.prototype.previousSibling
+        * Node.prototype.parentNode
+        *一个节点的父节点只可能是三种类型：元素节点（element）、文档节点（document）和文档片段节点（documentfragment）。*
+        * Node.prototype.parentElement
+        * Node.prototype.firstChild，Node.prototype.lastChild
+        * Node.prototype.childNodes
+        * Node.prototype.isConnected
+    * Node方法：
+        * Node.prototype.appendChild()
+        * Node.prototype.hasChildNodes()
+        * Node.prototype.cloneNode()
+        * Node.prototype.insertBefore()
+        * Node.prototype.removeChild()
+        * Node.prototype.replaceChild()
+        * Node.prototype.contains()
+        * Node.prototype.compareDocumentPosition()
+        * Node.prototype.isEqualNode()，Node.prototype.isSameNode()
+        * Node.prototype.normalize()
+        * Node.prototype.getRootNode()
+    * NodeList可以包含各种类型的节点，HTMLCollection只能包含 HTML 元素节点。
+    * 目前，只有Node.childNodes返回的是一个动态集合，其他的 NodeList 都是静态集合。
+    * 与NodeList接口不同，HTMLCollection没有forEach方法，只能使用for循环遍历。HTMLCollection实例都是动态集合，节点的变化会实时反映在集合中。
+    * ParentNode接口：
+        * ParentNode.children
+       * ParentNode.firstElementChild
+        * ParentNode.lastElementChild
+        * ParentNode.childElementCount
+        * ParentNode.append()，ParentNode.prepend()
+    * ChildNode接口：
+        * ChildNode.remove()；从父节点移除当前节点。
+        * ChildNode.before()，ChildNode.after()；插入一个或多个同级节点。两者拥有相同的父节点。
+        * ChildNode.replaceWith()
+    * doucument对象的获取方法：
+        * 正常的网页，直接使用document或window.document。
+        * iframe框架里面的网页，使用iframe节点的contentDocument属性。
+        * Ajax 操作返回的文档，使用XMLHttpRequest对象的responseXML属性。
+        * 内部节点的ownerDocument属性。 
+    * 有些 HTML 属性名是 JavaScript 的保留字，转为 JavaScript 属性时，必须改名。主要是以下两个：
+        * for属性改为htmlFor
+        * class属性改为className
+    * 文本节点（Text）代表元素节点（Element）和属性节点（Attribute）的文本内容。
+    * Text 节点的方法
+        * appendData(); deleteData(); insertData()；replaceData()；subStringData()；
+        * remove()；
+        * splitText()；父元素的normalize方法可以实现逆操作，将它们合并。
+    * CSSStyleDeclaration 接口用来操作元素的样式。三个地方部署了这个接口：
+        * 元素节点的style属性（Element.style）
+        * CSSStyle实例的style属性
+        * window.getComputedStyle()的返回值
+    * CSS对象的两个静态方法：
+        * CSS.escape();用于转移CSS选择器里面的特殊字符。
+        * CSS.supports();判断当前环境是否支持某一句CSS规则。
+    * window.getComputedStyle()；获取浏览器计算后得到的最终规则。伪元素的样式可以通过此方法获取。
+    * CSSRule.type属性返回一个整数值，表示当前规则的类型。最常见的类型有以下几种:
+        * 1：普通样式规则（CSSStyleRule 实例）
+        * 3：@import规则
+        * 4：@media规则（CSSMediaRule 实例）
+        * 5：@font-face规则
+    * Mutation Observer API 用来监视 DOM 变动。其特点：
+        * 它等待所有脚本任务完成后，才会运行（即异步触发方式）。
+        * 它把 DOM 变动记录封装成一个数组进行处理，而不是一条条个别处理 DOM 变动。
+        * 它既可以观察 DOM 的所有类型变动，也可以指定只观察某一类变动。 
+49. DOM 的事件操作（监听和触发），都定义在EventTarget接口。所有节点对象都部署了这个接口，其他一些需要事件通信的浏览器内置对象（比如，XMLHttpRequest、AudioNode、AudioContext）也部署了这个接口。该接口主要提供三个实例方法:
+    * addEventListener：绑定事件的监听函数
+    * removeEventListener：移除事件的监听函数
+    * dispatchEvent：触发事件
+50. 事件的传播
+   一个事件发生后，会在子元素和父元素之间传播（propagation）。这种传播分成三个阶段：
+    * 第一阶段：从window对象传导到目标节点（上层传到底层），称为“捕获阶段”（capture phase）。
+    * 第二阶段：在目标节点上触发，称为“目标阶段”（target phase）。
+    * 第三阶段：从目标节点传导回window对象（从底层传回上层），称为“冒泡阶段”（bubbling phase）。
+    这种三阶段的传播模型，使得同一个事件会在多个节点上触发。
    
    
 [跳转到文章开头](#home)
