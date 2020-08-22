@@ -288,6 +288,20 @@
     * 第二阶段：在目标节点上触发，称为“目标阶段”（target phase）。
     * 第三阶段：从目标节点传导回window对象（从底层传回上层），称为“冒泡阶段”（bubbling phase）。
     这种三阶段的传播模型，使得同一个事件会在多个节点上触发。
+51. Event对象
+    * 实例属性
+        * Event.bubbles，Event.eventPhase
+        * Event.cancelable，Event.cancelBubble，event.defaultPrevented
+        * Event.currentTarget，Event.target
+        * Event.type
+        * Event.timeStamp
+        * Event.isTrusted。该事件是否由真实的用户行为产生。
+        * Event.detail
+    * 实例方法
+        * Event.preventDefault()。取消浏览器对当前事件的默认行为。
+        * Event.stopPropagation()
+        * Event.stopImmediatePropagation()
+        * Event.composedPath()
    
    
 [跳转到文章开头](#home)
