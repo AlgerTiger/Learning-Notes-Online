@@ -303,6 +303,7 @@
         * Event.stopImmediatePropagation()
         * Event.composedPath()
 52. throttle是“节流”，确保一段时间内只执行一次，而debounce是“防抖”，要连续操作结束后再执行。
+53. Location对象是浏览器提供的原生对象，提供 URL 相关的信息和操作方法。
 
    
 [跳转到文章开头](#home)
